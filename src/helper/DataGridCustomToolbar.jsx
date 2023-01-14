@@ -1,10 +1,7 @@
-import { useState } from "react";
 import { Search } from "@mui/icons-material";
 import {
-  DataGrid,
   GridToolbarContainer,
   GridToolbarColumnsButton,
-  GridToolbarFilterButton,
   GridToolbarExport,
   GridToolbarDensitySelector,
 } from "@mui/x-data-grid";

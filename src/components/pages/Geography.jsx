@@ -7,8 +7,8 @@ import { ResponsiveChoropleth } from "@nivo/geo";
 
 const Geography = () => {
   const { data, isLoading } = useGetGeographyQuery();
-  console.log("Geography ~ data", data);
   const theme = useTheme();
+  if (!data || isLoading) return "Loading...";
   return (
     <Box m="1.5rem 2.5rem">
       <Header title="GEOGRAPHY" subTitle="Find where your users are located." />
