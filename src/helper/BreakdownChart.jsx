@@ -5,6 +5,8 @@ import { useGetSalesQuery } from "redux/api";
 
 const BreakdownChart = ({ isDashboard = false }) => {
   const { data, isLoading } = useGetSalesQuery();
+  console.log("BreakdownChart ~ data", data)
+
   const theme = useTheme();
 
   if (!data || isLoading) return "Loading...";
