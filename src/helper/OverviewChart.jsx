@@ -42,39 +42,39 @@ const OverviewChart = ({ isDashboard = false, view }) => {
     <ResponsiveLine
       data={view === "sales" ? totalSalesLine : totalUnitsLine}
       theme={{
-              axis: {
-                domain: {
-                  line: {
-                    stroke: theme.palette.secondary[200],
-                  },
-                },
-                legend: {
-                  text: {
-                    fill: theme.palette.secondary[200],
-                  },
-                },
-                ticks: {
-                  line: {
-                    stroke: theme.palette.secondary[200],
-                    strokeWidth: 1,
-                  },
-                  text: {
-                    fill: theme.palette.secondary[200],
-                  },
-                },
-              },
-              legends: {
-                text: {
-                  fill: theme.palette.secondary[200],
-                },
-              },
-              tooltip: {
-                container: {
-                  color: theme.palette.primary.main,
-                },
-              },
-            }}
-      margin={{ top: 20, right: 50, bottom: 50, left: 70 }}
+        axis: {
+          domain: {
+            line: {
+              stroke: theme.palette.secondary[200],
+            },
+          },
+          legend: {
+            text: {
+              fill: theme.palette.secondary[200],
+            },
+          },
+          ticks: {
+            line: {
+              stroke: theme.palette.secondary[200],
+              strokeWidth: 1,
+            },
+            text: {
+              fill: theme.palette.secondary[200],
+            },
+          },
+        },
+        legends: {
+          text: {
+            fill: theme.palette.secondary[200],
+          },
+        },
+        tooltip: {
+          container: {
+            color: theme.palette.primary.main,
+          },
+        },
+      }}
+      margin={{ top: 20, right: 50, bottom: 30, left: 70 }}
       xScale={{ type: "point" }}
       yScale={{
         type: "linear",
@@ -85,6 +85,7 @@ const OverviewChart = ({ isDashboard = false, view }) => {
       }}
       yFormat=" >-.2f"
       curve="catmullRom"
+      enableArea={isDashboard}
       axisTop={null}
       axisRight={null}
       axisBottom={{
@@ -103,6 +104,7 @@ const OverviewChart = ({ isDashboard = false, view }) => {
       axisLeft={{
         orient: "left",
         tickSize: 5,
+        tickValues: 5,
         tickPadding: 5,
         tickRotation: 0,
         legend: isDashboard
